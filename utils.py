@@ -32,7 +32,7 @@ class BoundBox:
 
 class WeightReader:
     def __init__(self, weight_file):
-        self.offset = 4
+        self.offset = 5
         self.all_weights = np.fromfile(weight_file, dtype='float32')
         
     def read_bytes(self, size):
@@ -40,7 +40,7 @@ class WeightReader:
         return self.all_weights[self.offset-size:self.offset]
     
     def reset(self):
-        self.offset = 4
+        self.offset = 5
 
 def normalize(image):
     image = image / 255.
